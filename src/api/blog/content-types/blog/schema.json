@@ -119,6 +119,15 @@
         }
       },
       "required": true
+    },
+    "short_desc": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
     }
   }
 }
