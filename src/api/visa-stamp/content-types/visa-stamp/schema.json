@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visa_stamps",
+  "info": {
+    "singularName": "visa-stamp",
+    "pluralName": "visa-stamps",
+    "displayName": "visa-stamp"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stamp_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

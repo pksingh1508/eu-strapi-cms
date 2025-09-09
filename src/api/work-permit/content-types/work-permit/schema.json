@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_permits",
+  "info": {
+    "singularName": "work-permit",
+    "pluralName": "work-permits",
+    "displayName": "work-permit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "permit_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
