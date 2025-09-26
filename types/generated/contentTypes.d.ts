@@ -562,6 +562,118 @@ export interface ApiKhabarKhabar extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPrimeNewsImmigrationPrimeNewsImmigration
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'prime_news_immigrations';
+  info: {
+    displayName: 'prime-news-immigration';
+    pluralName: 'prime-news-immigrations';
+    singularName: 'prime-news-immigration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<['news']> &
+      Schema.Attribute.Required;
+    contents: Schema.Attribute.RichText & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::prime-news-immigration.prime-news-immigration'
+    > &
+      Schema.Attribute.Private;
+    news_image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    short_desc: Schema.Attribute.Text & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    tags: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    views: Schema.Attribute.Integer & Schema.Attribute.Required;
+  };
+}
+
+export interface ApiPrimeSuccessStoryPrimeSuccessStory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'prime_success_stories';
+  info: {
+    displayName: 'prime-success-story';
+    pluralName: 'prime-success-stories';
+    singularName: 'prime-success-story';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::prime-success-story.prime-success-story'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    story: Schema.Attribute.Text & Schema.Attribute.Required;
+    success_image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrimeblogPrimeblog extends Struct.CollectionTypeSchema {
+  collectionName: 'primeblogs';
+  info: {
+    displayName: 'primeblog';
+    pluralName: 'primeblogs';
+    singularName: 'primeblog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author_name: Schema.Attribute.String & Schema.Attribute.Required;
+    blog_image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    category: Schema.Attribute.Enumeration<['blog']> &
+      Schema.Attribute.Required;
+    comments_count: Schema.Attribute.Integer & Schema.Attribute.Required;
+    contents: Schema.Attribute.RichText & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    likes_count: Schema.Attribute.Integer & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::primeblog.primeblog'
+    > &
+      Schema.Attribute.Private;
+    meta_description: Schema.Attribute.Text;
+    meta_keyword: Schema.Attribute.String;
+    meta_title: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    short_desc: Schema.Attribute.Text & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    tags: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSuccessStorySuccessStory
   extends Struct.CollectionTypeSchema {
   collectionName: 'success_stories';
@@ -1246,6 +1358,9 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
       'api::khabar.khabar': ApiKhabarKhabar;
+      'api::prime-news-immigration.prime-news-immigration': ApiPrimeNewsImmigrationPrimeNewsImmigration;
+      'api::prime-success-story.prime-success-story': ApiPrimeSuccessStoryPrimeSuccessStory;
+      'api::primeblog.primeblog': ApiPrimeblogPrimeblog;
       'api::success-story.success-story': ApiSuccessStorySuccessStory;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::visa-stamp.visa-stamp': ApiVisaStampVisaStamp;

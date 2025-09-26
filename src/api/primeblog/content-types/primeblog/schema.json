@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "primeblogs",
+  "info": {
+    "singularName": "primeblog",
+    "pluralName": "primeblogs",
+    "displayName": "primeblog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "author_name": {
+      "type": "string",
+      "required": true
+    },
+    "comments_count": {
+      "type": "integer",
+      "required": true
+    },
+    "likes_count": {
+      "type": "integer",
+      "required": true
+    },
+    "blog_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "blog"
+      ]
+    },
+    "tags": {
+      "type": "string",
+      "required": true
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_keyword": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "text"
+    },
+    "contents": {
+      "type": "richtext",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "short_desc": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
